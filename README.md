@@ -5,6 +5,7 @@
 * Given your scala cdktf script (see Development/Example below), deploy it running
 
 ```bash
+# First time to get cdktf.json
 $ scala-cli run myScript.scala
 Compiling project (Scala 3.2.2, JVM)
 Compiled project (Scala 3.2.2, JVM)
