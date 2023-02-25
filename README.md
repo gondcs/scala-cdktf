@@ -1,23 +1,45 @@
 ## Scala goodies for cdkft
 
-
 ### How to use it
 
 Given your valid scala cdktf script (see Development section below), deploy it using
 
 ```bash
 $ scala-cli run myScript.scala
-$ cdktf deploy 
+Compiling project (Scala 3.2.2, JVM)
+Compiled project (Scala 3.2.2, JVM)
+
+✔ ~/cdktf/example 
+$ export AWS_PROFILE=dev
+✔ ~/cdktf/example 
+$ cdktf deploy
+
+⠦  Synthesizing
+example-scala-cdktf  Initializing the backend...
+example-scala-cdktf  
+                     Successfully configured the backend "local"! Terraform will automatically
+                     use this backend unless the backend configuration changes.
+example-scala-cdktf  Initializing provider plugins...
+example-scala-cdktf  - Finding hashicorp/aws versions matching "4.55.0"...
+example-scala-cdktf  - Using hashicorp/aws v4.55.0 from the shared cache directory
+example-scala-cdktf  Terraform has created a lock file .terraform.lock.hcl to record the provider
+                     selections it made above. Include this file in your version control repository
+                     so that Terraform can guarantee to make the same selections by default when
+                     you run "terraform init" in the future.
+...
 ```
 
 ### Development
 
-* Use `scala-cli run myScript.scala`
-* For ide support `scala-cli setup-ide .`
+* First run: Use `scala-cli run myScript.scala`
+  * this will create a `cdktf.json`
+* Tip: for ide support `scala-cli setup-ide .`
+
+### Example Scala CLI script
 
 ```scala
 // myScript.scala content
-//> using dep "dev.gondcs.cdktf::scala-cdktf:0.1.2"
+//> using dep "dev.gondcs::scala-cdktf:0.1.0"
 //> using dep "com.hashicorp:cdktf-provider-aws:12.0.5"
 
 import dev.gondcs.cdktf.scaladsl._
