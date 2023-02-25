@@ -2,16 +2,14 @@
 
 ### How to use it
 
-Given your valid scala cdktf script (see Development section below), deploy it using
+* Given your scala cdktf script (see Development/Example below), deploy it running
 
 ```bash
 $ scala-cli run myScript.scala
 Compiling project (Scala 3.2.2, JVM)
 Compiled project (Scala 3.2.2, JVM)
 
-✔ ~/cdktf/example 
 $ export AWS_PROFILE=dev
-✔ ~/cdktf/example 
 $ cdktf deploy
 
 ⠦  Synthesizing
@@ -31,11 +29,20 @@ example-scala-cdktf  Terraform has created a lock file .terraform.lock.hcl to re
 
 ### Development
 
+#### Prerequisites
+
+* Get `cdkft` by running `brew install cdktf`
+  * https://developer.hashicorp.com/terraform/tutorials/cdktf/cdktf-install
+* Get `scala-cli` by running `brew install Virtuslab/scala-cli/scala-cli`
+  * https://scala-cli.virtuslab.org/
+  
+#### Hints
+
 * First run: Use `scala-cli run myScript.scala`
   * this will create a `cdktf.json`
-* Tip: for ide support `scala-cli setup-ide .`
+* For ide support `scala-cli setup-ide .`
 
-### Example Scala CLI script
+#### Example Scala CLI script
 
 ```scala
 // myScript.scala content
